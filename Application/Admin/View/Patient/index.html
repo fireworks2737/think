@@ -1,0 +1,40 @@
+        <div class="result-wrap">
+            <form action="__APP__/Admin/Patient/more_delete" method="post">
+                <div class="result-title">
+                    <div class="result-list">
+                        <a href="__ROOT__/index.php/Admin/Patient/insert" style="font-size:12px;color:black;"><i class="icon-font"></i>新增文件</a>
+                        <i class="icon-font"></i><input type="submit" value="批量删除" style="border:none;background:none;color:black;font-size:12px;"/>
+                    </div>
+                </div>
+                <div class="result-content" >
+                    <table class="result-tab" width="62%" >
+                        <tr>
+                            <th class="tc" width="5%"></th>
+                            <th>ID</th>
+                            <th>文件名</th>
+                            <th>路径</th>
+                            <th>操作</th>
+                        </tr>
+						<tbody id = "conte">
+						<foreach name="list" item="v" >
+						
+                        <tr>
+                            <td class="tc"><input name="id[]" value="{$v.id}" type="checkbox" /></td>
+							
+                            <td>{$v.id}</td>
+                            <td>{$v.pdf_name}</td>
+                            <td>{$v.pdf_src}</td>
+                            <td>
+                                <a class="link-update" href="__ROOT__/index.php/Admin/Patient/update/id/{$v.id}">修改</a>
+                                <a class="link-del" href="__ROOT__/index.php/Admin/Patient/delete/id/{$v.id}" >删除</a>
+                            </td>
+                        </tr>
+						
+						</foreach>
+						</tbody>
+                    </table>
+					<br />
+                    <div class="green-black" id="paged">{$page}</div>
+                </div>
+            </form>
+        </div>

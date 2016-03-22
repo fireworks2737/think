@@ -1,0 +1,44 @@
+        <div class="result-wrap">
+            <form action="__APP__/Admin/Admin/more_delete" method="post">
+                <div class="result-title">
+                    <div class="result-list">
+                        <a href="__ROOT__/index.php/Admin/Admin/insert" style="font-size:12px;color:black;"><i class="icon-font"></i>新增管理员</a>
+                        <i class="icon-font"></i><input type="submit" value="批量删除" style="border:none;background:none;color:black;font-size:12px;"/>
+                    </div>
+                </div>
+                <div class="result-content" >
+                    <table class="result-tab" width="62%" >
+                        <tr>
+                            <th class="tc" width="5%"></th>
+                            <th>ID</th>
+                            <th>管理员邮箱</th>
+                            <th>上次登录时间</th>
+                            <th>操作</th>
+                        </tr>
+						<tbody id = "conte">
+						<foreach name="list" item="v" >
+						
+                        <tr>
+                            <td class="tc"><input name="id[]" value="{$v.id}" type="checkbox" /></td>
+							
+                            <td>{$v.id}</td>
+                            <td>{$v.email}</td>
+							<if condition="$v.last_login_time == '' or $v.last_login_time == null or $v.last_login_time == 0 "> 
+                            <td>该用户从未登录</td>
+							<else />
+							<td>{$v.last_login_time|date="Y-m-d,H:i:s",###}</td>
+							</if>
+                            <td>
+                                <a class="link-update" href="__ROOT__/index.php/Admin/Admin/update/id/{$v.id}">修改</a>
+                                <a class="link-del" href="__ROOT__/index.php/Admin/Admin/delete/id/{$v.id}" >删除</a>
+                            </td>
+                        </tr>
+						
+						</foreach>
+						</tbody>
+                    </table>
+					<br />
+                    <div class="green-black" id="paged">{$page}</div>
+                </div>
+            </form>
+        </div>

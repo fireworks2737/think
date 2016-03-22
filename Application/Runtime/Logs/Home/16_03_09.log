@@ -1,0 +1,22 @@
+[ 2016-03-09T09:04:45+08:00 ] 192.168.1.211 /ceshi1/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.057736s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.044539s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.044601s ]
+SQL: SHOW COLUMNS FROM `homepage` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `homepage` LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.023555s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.023633s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.203498s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.203564s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.037071s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.037121s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.058264s ]
+INFO: [ app_end ] --END-- [ RunTime:0.058359s ]
+
